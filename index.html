@@ -3,723 +3,1318 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🚩 청소년 노동권 구조대</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<title>청소년 노동권 구조대 학습지</title>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <style>
-:root {
-  --navy:#0F2461; --blue:#1B4FBF; --gold:#F59E0B; --gold-lt:#FCD34D;
-  --bg:#F0F4F8; --s4:#94A3B8; --s6:#475569; --s7:#374151; --s8:#1E293B;
-}
-*{box-sizing:border-box;margin:0;padding:0;font-family:'Noto Sans KR',sans-serif;}
-body{background:var(--bg);min-height:100vh;}
+  :root {
+    --red: #D72B2B;
+    --red-dark: #A81E1E;
+    --red-light: #FF4444;
+    --navy: #0D1B3E;
+    --navy-mid: #1A2E5C;
+    --navy-light: #243A72;
+    --gold: #F5C518;
+    --white: #FFFFFF;
+    --off-white: #F8F4EE;
+    --gray-light: #EEE8DE;
+    --gray: #B0A99A;
+    --text-dark: #1A0A00;
+    --shadow: 0 4px 24px rgba(13,27,62,0.18);
+    --shadow-lg: 0 8px 40px rgba(13,27,62,0.28);
+  }
 
-header{background:linear-gradient(135deg,#0F2461 0%,#1B4FBF 55%,#0F2461 100%);padding:28px 24px 36px;position:relative;overflow:hidden;}
-header::before{content:'';position:absolute;top:-60px;right:-60px;width:280px;height:280px;border-radius:50%;background:var(--gold);opacity:.08;}
-header::after{content:'';position:absolute;bottom:-40px;left:-40px;width:200px;height:200px;border-radius:50%;background:#60A5FA;opacity:.08;}
-.hinner{max-width:980px;margin:0 auto;position:relative;z-index:1;}
-.htop{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;}
-.htag{font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--gold);margin-bottom:8px;}
-h1{font-size:clamp(20px,4vw,30px);font-weight:900;color:#fff;line-height:1.2;}
-.hsub{font-size:clamp(14px,2.5vw,18px);font-weight:700;color:var(--gold-lt);margin-top:4px;}
-.hdesc{font-size:13px;color:#BFDBFE;margin-top:6px;}
-.hbtns{display:flex;flex-direction:column;gap:8px;align-items:flex-end;flex-shrink:0;}
-.btn-save{padding:10px 20px;border-radius:10px;font-weight:800;font-size:13px;background:rgba(255,255,255,.15);color:#fff;border:2px solid rgba(255,255,255,.4);cursor:pointer;transition:all .2s;white-space:nowrap;}
-.btn-save:hover{background:rgba(255,255,255,.28);}
-.btn-submit{padding:10px 22px;border-radius:10px;font-weight:800;font-size:13px;background:var(--gold);color:var(--navy);border:none;cursor:pointer;transition:all .2s;white-space:nowrap;}
-.btn-submit:hover{filter:brightness(1.08);}
-.btn-submit:active,.btn-save:active{transform:scale(.97);}
-.irow{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:20px;}
-.ifield label{display:block;font-size:11px;font-weight:700;color:#93C5FD;margin-bottom:4px;}
-.ifield input{width:100%;border-radius:8px;padding:8px 12px;font-size:13px;font-weight:600;color:#1E293B;background:rgba(255,255,255,.93);border:none;outline:none;transition:box-shadow .2s;}
-.ifield input:focus{box-shadow:0 0 0 2px var(--gold);}
+  * { box-sizing: border-box; margin: 0; padding: 0; }
 
-.statuswrap{max-width:980px;margin:-14px auto 0;padding:0 16px;position:relative;z-index:10;}
-.statusbar{background:#fff;border-radius:12px;padding:10px 18px;display:flex;align-items:center;gap:10px;box-shadow:0 2px 12px rgba(0,0,0,.08);}
-.sdot{width:8px;height:8px;border-radius:50%;background:#22C55E;flex-shrink:0;}
-.sname{font-size:12px;color:var(--s6);}
-.ssp{flex:1;}
-.sbadge{font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;background:#EEF2FF;color:var(--blue);}
-.scnt{font-size:12px;color:var(--s4);}
-.scnt strong{color:var(--blue);}
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: var(--navy);
+    color: var(--text-dark);
+    min-height: 100vh;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,0.03) 39px, rgba(255,255,255,0.03) 40px),
+      repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,0.03) 39px, rgba(255,255,255,0.03) 40px);
+  }
 
-main{max-width:980px;margin:0 auto;padding:24px 16px 48px;display:flex;flex-direction:column;gap:20px;}
-.whitebox{background:#fff;border-radius:16px;padding:20px;border:1px solid #E2E8F0;}
-.stitle{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
-.sbar{width:4px;height:24px;border-radius:2px;flex-shrink:0;}
-.stitle h2{font-size:15px;font-weight:900;color:var(--s8);}
-.ggrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-.gcard{border-radius:12px;padding:14px 16px;border-left:4px solid;}
-.gcard .gl{font-size:11px;font-weight:700;margin-bottom:4px;}
-.gcard .gt{font-size:13px;font-weight:700;color:var(--s8);}
-.gcard .gd{font-size:11px;color:var(--s6);margin-top:4px;}
+  /* ── SAVE BAR ── */
+  .save-bar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+    border-bottom: 3px solid var(--red);
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  }
 
-.sec-hd{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;}
-.sec-hd h2{font-size:15px;font-weight:900;color:var(--s8);}
-.sec-hd p{font-size:11px;color:var(--s4);margin-top:3px;}
-.optgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .btn-save {
+    margin-left: auto;
+    background: linear-gradient(135deg, var(--red) 0%, var(--red-dark) 100%);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    padding: 10px 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 3px 12px rgba(215,43,43,0.5);
+    transition: transform 0.15s, box-shadow 0.15s;
+    white-space: nowrap;
+  }
+  .btn-save:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(215,43,43,0.6); }
+  .btn-save:active { transform: translateY(0); }
+  .btn-save .icon { font-size: 16px; }
 
-.ccard{border-radius:16px;border:1px solid #E2E8F0;overflow:hidden;transition:all .25s;}
-.ccard.active{box-shadow:0 4px 24px rgba(0,0,0,.13);}
-.ccard.faded{opacity:.4;}
-.chdr{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;cursor:pointer;gap:12px;user-select:none;}
-.chl{display:flex;align-items:center;gap:10px;pointer-events:none;}
-.cicon{font-size:22px;flex-shrink:0;}
-.cbadgerow{font-size:10px;font-weight:700;letter-spacing:.08em;color:rgba(255,255,255,.7);margin-bottom:2px;}
-.ctitle{font-size:14px;font-weight:900;color:#fff;line-height:1.3;}
-.chr{display:flex;align-items:center;gap:8px;flex-shrink:0;pointer-events:none;}
-.chosenpill{font-size:11px;font-weight:700;padding:5px 12px;border-radius:20px;border:2px solid rgba(255,255,255,.6);color:#fff;background:transparent;white-space:nowrap;}
-.chosenpill.sel{background:rgba(255,255,255,.22);}
-.reqtag{font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;background:rgba(255,255,255,.2);color:#fff;}
-.tarrow{color:#fff;font-size:12px;}
+  /* ── MAIN WRAPPER ── */
+  #capture-area {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 24px 16px 40px;
+  }
 
-.cbody{padding:16px 18px;display:flex;flex-direction:column;gap:14px;}
-.scenbox{background:#fff;border-radius:10px;padding:14px;border:1px solid rgba(0,0,0,.06);}
-.boxlbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px;}
-.scentext{font-size:13px;color:var(--s7);line-height:1.7;}
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, var(--red-dark) 0%, var(--red) 40%, #FF2B2B 100%);
+    border-radius: 16px 16px 0 0;
+    padding: 28px 28px 22px;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 5px solid var(--gold);
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 180px; height: 180px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -20px; left: 30%;
+    width: 120px; height: 120px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 50%;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--navy);
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+  }
+  .hero-main-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .hero-left { flex: 1; min-width: 200px; }
+  .hero-title {
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: clamp(28px, 5vw, 46px);
+    color: var(--white);
+    line-height: 1.15;
+    letter-spacing: -1px;
+    text-shadow: 2px 3px 0 rgba(0,0,0,0.3);
+  }
+  .hero-title span { color: var(--gold); }
+  .hero-sub {
+    margin-top: 10px;
+    color: rgba(255,255,255,0.85);
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .hero-student-box {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: rgba(0,0,0,0.25);
+    border: 1.5px solid rgba(255,255,255,0.2);
+    border-radius: 12px;
+    padding: 14px 16px;
+    min-width: 180px;
+    backdrop-filter: blur(4px);
+    position: relative;
+    z-index: 1;
+  }
+  .hero-student-label {
+    font-family: 'Black Han Sans', sans-serif;
+    color: var(--gold);
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 2px;
+  }
+  .hero-input {
+    background: rgba(255,255,255,0.12);
+    border: 1.5px solid rgba(255,255,255,0.25);
+    border-radius: 7px;
+    color: var(--white);
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    padding: 8px 12px;
+    outline: none;
+    transition: border-color 0.2s, background 0.2s;
+    width: 100%;
+  }
+  .hero-input::placeholder { color: rgba(255,255,255,0.45); }
+  .hero-input:focus {
+    border-color: var(--gold);
+    background: rgba(255,255,255,0.2);
+  }
+  .hero-emblem {
+    position: absolute;
+    right: 28px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 72px;
+    opacity: 0.1;
+    filter: drop-shadow(0 0 20px #fff);
+    pointer-events: none;
+  }
 
-a.sitebox,.sitebox{border-radius:10px;padding:12px 14px;display:flex;align-items:flex-start;gap:10px;text-decoration:none;transition:filter .2s;}
-a.sitebox{cursor:pointer;}
-a.sitebox:hover{filter:brightness(.94);}
-.siteico{font-size:18px;margin-top:1px;flex-shrink:0;}
-.sitelbl{font-size:10px;font-weight:700;margin-bottom:2px;}
-.sitename{font-size:13px;font-weight:700;color:var(--s7);}
-.sitepath{font-size:11px;color:var(--s4);margin-top:2px;}
+  /* ── SHEET BODY ── */
+  .sheet-body {
+    background: var(--off-white);
+    border-radius: 0 0 16px 16px;
+    padding: 28px 24px 32px;
+  }
 
-/* SEL */
-.selbox{border-radius:10px;overflow:hidden;border:1px solid #E2E8F0;}
-.selhdr{padding:9px 14px;display:flex;align-items:center;gap:6px;background:var(--s8);}
-.selskill{font-size:11px;font-weight:700;color:var(--gold-lt);}
-.selsub{font-size:11px;color:#fff;font-weight:700;}
-.selqa{background:#F8FAFC;padding:14px;}
-.sellbl{font-size:11px;font-weight:700;color:var(--s6);margin-bottom:6px;}
-.selq{font-size:13px;color:var(--s7);line-height:1.7;margin-bottom:10px;}
+  /* ── MISSION BLOCK ── */
+  .mission-block {
+    margin-bottom: 32px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
 
-/* Upload */
-.uplbl{font-size:11px;font-weight:700;margin-bottom:6px;}
-.upzone{border-radius:10px;border:2px dashed #CBD5E1;background:#F8FAFC;min-height:118px;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:all .2s;overflow:hidden;}
-.upzone:hover{border-color:var(--blue);background:#EEF2FF;}
-.upzone.has-img{border-style:solid;background:#F0F4FF;}
-.upzone img{width:100%;max-height:160px;object-fit:contain;border-radius:8px;}
-.upph{display:flex;flex-direction:column;align-items:center;gap:6px;padding:20px;text-align:center;}
-.upph span{font-size:26px;}
-.upph p{font-size:12px;font-weight:600;color:var(--s6);}
-.upph small{font-size:11px;color:var(--s4);}
+  .mission-header {
+    background: linear-gradient(90deg, var(--navy) 0%, var(--navy-light) 100%);
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .mission-num {
+    background: var(--red);
+    color: var(--white);
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    padding: 4px 10px;
+    border-radius: 4px;
+  }
+  .mission-title-text {
+    font-family: 'Black Han Sans', sans-serif;
+    color: var(--white);
+    font-size: 17px;
+    letter-spacing: 0.5px;
+  }
+  .mission-icon { font-size: 22px; margin-left: auto; }
 
-/* Evidence */
-.evbox{border-radius:10px;padding:14px;border:1px solid #FCD34D;background:#FFFBEB;}
-.evlbl{font-size:11px;font-weight:700;color:#92400E;margin-bottom:10px;}
-.evitem{display:flex;align-items:flex-start;gap:10px;margin-bottom:8px;cursor:pointer;}
-.evitem:last-child{margin-bottom:0;}
-.evck{width:20px;height:20px;border-radius:5px;border:2px solid #CBD5E1;background:#fff;flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;transition:all .2s;font-size:11px;font-weight:700;color:transparent;}
-.evck.on{color:#fff;}
-.evtxt{font-size:13px;color:var(--s7);line-height:1.5;transition:all .2s;}
-.evtxt.on{color:var(--s4);text-decoration:line-through;}
+  .mission-content {
+    background: var(--white);
+    padding: 22px 20px;
+  }
 
-/* ── MOCK FORM ── */
-.formbox{border-radius:12px;border:2px solid;overflow:hidden;}
-.formhdr{padding:10px 16px;display:flex;align-items:center;gap:8px;}
-.formhdr-icon{font-size:16px;}
-.formhdr-title{font-size:13px;font-weight:900;color:#fff;}
-.formhdr-sub{font-size:11px;color:rgba(255,255,255,.75);margin-left:auto;}
-.formbody{background:#fff;padding:16px;}
-.form-notice{border-radius:8px;padding:10px 12px;font-size:12px;line-height:1.6;margin-bottom:14px;}
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-.form-grid.full{grid-template-columns:1fr;}
-.fgroup{display:flex;flex-direction:column;gap:4px;}
-.fgroup label{font-size:11px;font-weight:700;color:var(--s6);}
-.fgroup input,.fgroup textarea,.fgroup select{
-  border:1px solid #E2E8F0;border-radius:7px;padding:8px 10px;
-  font-size:13px;color:var(--s7);font-family:'Noto Sans KR',sans-serif;
-  outline:none;transition:box-shadow .2s;background:#FAFAFA;width:100%;
-}
-.fgroup input:focus,.fgroup textarea:focus,.fgroup select:focus{box-shadow:0 0 0 2px;background:#fff;}
-.fgroup textarea{resize:vertical;min-height:68px;}
-.fgroup .hint{font-size:11px;color:var(--s4);margin-top:2px;}
-.form-divider{height:1px;background:#F1F5F9;margin:12px 0;}
-.form-stamp{display:flex;justify-content:flex-end;align-items:center;gap:8px;margin-top:14px;}
-.stamp-box{border:2px solid;border-radius:8px;padding:6px 16px;font-size:12px;font-weight:700;opacity:.5;}
-.stamp-label{font-size:11px;color:var(--s4);}
+  /* ── WAGE ALERT ── */
+  .wage-alert {
+    background: linear-gradient(135deg, #FFF3CD, #FFEAA0);
+    border: 2px solid var(--gold);
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .wage-alert .icon { font-size: 28px; }
+  .wage-alert .text { flex: 1; }
+  .wage-alert .text strong {
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 15px;
+    color: var(--red-dark);
+    display: block;
+  }
+  .wage-alert .text span { font-size: 13px; color: #555; }
+  .wage-amount {
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 24px;
+    color: var(--navy);
+    white-space: nowrap;
+  }
 
-/* Resources */
-.sitelinks{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:12px;}
-a.slink{display:flex;flex-direction:column;align-items:center;text-align:center;border-radius:12px;padding:12px 8px;border:1px solid #E2E8F0;text-decoration:none;background:#F8FAFC;transition:all .2s;cursor:pointer;}
-a.slink:hover{box-shadow:0 2px 12px rgba(0,0,0,.1);transform:translateY(-1px);}
-.slico{font-size:22px;margin-bottom:4px;}
-.sllbl{font-size:11px;font-weight:700;color:var(--s6);}
-.tipbox{border-radius:10px;padding:10px 14px;background:#FFFBEB;border:1px solid #FCD34D;}
-.tipbox p{font-size:12px;color:#92400E;}
+  /* ── FORM GRID ── */
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+  @media (max-width: 600px) { .form-grid { grid-template-columns: 1fr; } }
 
-/* Pledge */
-.pledgebox{border-radius:16px;padding:22px;background:linear-gradient(135deg,#0F2461,#1B4FBF);}
-.plgtitle{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
-.plgtitle h3{font-size:15px;font-weight:900;color:#fff;}
-.plgfoot{display:flex;justify-content:flex-end;margin-top:10px;}
+  .form-item label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 5px;
+    letter-spacing: 0.3px;
+  }
+  .form-item label .req { color: var(--red); }
+  .form-item input[type="text"] {
+    width: 100%;
+    border: 2px solid var(--gray-light);
+    border-radius: 7px;
+    padding: 9px 12px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    color: var(--text-dark);
+    background: var(--off-white);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .form-item input[type="text"]:focus {
+    border-color: var(--navy);
+    box-shadow: 0 0 0 3px rgba(13,27,62,0.12);
+    background: #fff;
+  }
 
-textarea{width:100%;border-radius:8px;padding:10px 12px;font-size:13px;color:var(--s7);resize:vertical;border:1px solid #E2E8F0;min-height:76px;outline:none;transition:box-shadow .2s;font-family:'Noto Sans KR',sans-serif;background:#fff;}
+  /* ── CHECKLIST ── */
+  .check-section-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--navy-mid);
+    margin-bottom: 10px;
+    padding-left: 4px;
+    border-left: 3px solid var(--red);
+    padding-left: 10px;
+  }
+  .checklist {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  @media (max-width: 500px) { .checklist { grid-template-columns: 1fr; } }
 
-#toast{position:fixed;bottom:32px;left:50%;transform:translateX(-50%) translateY(90px);background:#0A7A5A;color:#fff;border-radius:16px;padding:14px 28px;display:flex;align-items:center;gap:12px;box-shadow:0 8px 32px rgba(0,0,0,.2);z-index:999;transition:transform .35s cubic-bezier(.34,1.56,.64,1);min-width:280px;pointer-events:none;}
-#toast.show{transform:translateX(-50%) translateY(0);}
-.ticon{font-size:24px;}
-.ttitle{font-size:14px;font-weight:800;}
-.tsub{font-size:12px;opacity:.8;}
+  .check-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--off-white);
+    border: 2px solid var(--gray-light);
+    border-radius: 8px;
+    padding: 10px 12px;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .check-item:hover { border-color: var(--navy-light); }
+  .check-item.checked {
+    border-color: var(--red);
+    background: #FFF0F0;
+  }
+  .check-item input[type="checkbox"] { display: none; }
+  .custom-check {
+    width: 20px; height: 20px;
+    border: 2px solid var(--gray);
+    border-radius: 5px;
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px;
+    transition: all 0.2s;
+  }
+  .check-item.checked .custom-check {
+    background: var(--red);
+    border-color: var(--red);
+    color: #fff;
+  }
+  .check-label { font-size: 13px; font-weight: 500; color: var(--text-dark); line-height: 1.3; }
 
-@media(max-width:768px){.optgrid{grid-template-columns:1fr;}.ggrid{grid-template-columns:1fr;}.sitelinks{grid-template-columns:repeat(2,1fr);}.form-grid{grid-template-columns:1fr;}}
-@media(max-width:540px){.irow{grid-template-columns:1fr;}.htop{flex-direction:column;}.hbtns{flex-direction:row;}}
+  /* ── SCENARIO BOX ── */
+  .scenario-box {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .scenario-box::before {
+    content: '⚠';
+    position: absolute;
+    right: 16px; top: 50%;
+    transform: translateY(-50%);
+    font-size: 60px;
+    opacity: 0.08;
+  }
+  .scenario-tag {
+    background: var(--red);
+    color: #fff;
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    padding: 3px 10px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  .scenario-text {
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.6;
+  }
+  .scenario-text .amount {
+    color: var(--gold);
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 20px;
+  }
+
+  /* ── EMOTION SECTION ── */
+  .emotion-section {
+    background: #F0F4FF;
+    border: 2px solid #C5D0F5;
+    border-radius: 10px;
+    padding: 18px;
+    margin-bottom: 18px;
+  }
+  .emotion-title {
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 14px;
+    color: var(--navy);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .emotion-q {
+    margin-bottom: 12px;
+  }
+  .emotion-q label {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--navy-mid);
+    display: block;
+    margin-bottom: 6px;
+  }
+  .emotion-q input[type="text"] {
+    width: 100%;
+    border: 2px solid #C5D0F5;
+    border-radius: 7px;
+    padding: 9px 12px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    background: #fff;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .emotion-q input[type="text"]:focus { border-color: var(--navy); }
+  .emotion-hint {
+    font-size: 12px;
+    color: #888;
+    margin-top: 4px;
+    font-style: italic;
+  }
+
+  .action-banner {
+    background: linear-gradient(90deg, var(--red) 0%, var(--red-dark) 100%);
+    color: #fff;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-top: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .action-banner .arrow { font-size: 20px; }
+
+  /* ── PORTAL TABLE ── */
+  .portal-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 18px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  }
+  .portal-table thead tr {
+    background: var(--navy);
+    color: #fff;
+  }
+  .portal-table thead th {
+    padding: 10px 14px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-align: left;
+  }
+  .portal-table thead th:first-child { width: 38%; }
+  .portal-table tbody tr { border-bottom: 1px solid var(--gray-light); }
+  .portal-table tbody tr:last-child { border-bottom: none; }
+  .portal-table tbody td {
+    padding: 10px 14px;
+    font-size: 13px;
+    vertical-align: middle;
+  }
+  .portal-table tbody td:first-child {
+    font-weight: 700;
+    color: var(--navy-mid);
+    background: #F5F7FF;
+  }
+  .portal-table tbody td input[type="text"] {
+    width: 100%;
+    border: 2px solid var(--gray-light);
+    border-radius: 6px;
+    padding: 7px 10px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+    background: var(--off-white);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .portal-table tbody td input[type="text"]:focus {
+    border-color: var(--navy);
+    background: #fff;
+  }
+
+  /* ── PETITION POPUP ── */
+  .petition-btn-wrap { text-align: center; margin-bottom: 18px; }
+  .btn-example {
+    background: var(--white);
+    border: 2.5px solid var(--navy);
+    color: var(--navy);
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+    padding: 10px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .btn-example:hover {
+    background: var(--navy);
+    color: #fff;
+  }
+
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.65);
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .modal-overlay.active { display: flex; }
+  .modal-box {
+    background: #fff;
+    border-radius: 14px;
+    max-width: 560px;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    animation: modalIn 0.25s ease;
+  }
+  @keyframes modalIn {
+    from { opacity: 0; transform: scale(0.93) translateY(20px); }
+    to { opacity: 1; transform: none; }
+  }
+  .modal-header {
+    background: linear-gradient(90deg, var(--navy) 0%, var(--navy-light) 100%);
+    color: #fff;
+    padding: 18px 22px;
+    border-radius: 14px 14px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .modal-header h3 { font-family: 'Black Han Sans', sans-serif; font-size: 16px; }
+  .modal-close {
+    background: none; border: none; color: #fff;
+    font-size: 22px; cursor: pointer; line-height: 1;
+  }
+  .modal-body { padding: 22px; }
+  .petition-sample {
+    background: var(--off-white);
+    border: 1.5px dashed var(--gray);
+    border-radius: 8px;
+    padding: 18px;
+    font-size: 13px;
+    line-height: 1.9;
+    color: var(--text-dark);
+  }
+  .petition-sample .p-title {
+    text-align: center;
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 20px;
+    color: var(--navy);
+    margin-bottom: 16px;
+    letter-spacing: 4px;
+  }
+  .petition-sample .p-section {
+    font-weight: 700;
+    color: var(--red-dark);
+    margin-top: 12px;
+    margin-bottom: 4px;
+  }
+  .petition-sample .p-fill {
+    background: #FFF3CD;
+    border-bottom: 1.5px solid var(--gold);
+    display: inline;
+    padding: 0 4px;
+    border-radius: 2px;
+  }
+  .petition-tip {
+    background: #E8F0FE;
+    border-left: 4px solid #3B5BDB;
+    border-radius: 4px;
+    padding: 12px 14px;
+    margin-top: 14px;
+    font-size: 12.5px;
+    line-height: 1.7;
+    color: #1A237E;
+  }
+
+  /* ── SECTION DIVIDER ── */
+  .section-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 22px 0 16px;
+  }
+  .section-divider span {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--navy-mid);
+    letter-spacing: 1px;
+    white-space: nowrap;
+  }
+  .section-divider::before, .section-divider::after {
+    content: '';
+    flex: 1;
+    height: 2px;
+    background: var(--gray-light);
+  }
+
+  /* ── COMMITMENT BOX ── */
+  .commitment-block {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 60%, var(--red-dark) 100%);
+    border-radius: 12px;
+    padding: 24px 22px;
+    margin-top: 10px;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    overflow: hidden;
+  }
+  .commitment-block::after {
+    content: '✊';
+    position: absolute;
+    right: 20px; bottom: -5px;
+    font-size: 80px;
+    opacity: 0.08;
+  }
+  .commitment-label {
+    font-family: 'Black Han Sans', sans-serif;
+    color: var(--gold);
+    font-size: 14px;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+  }
+  .commitment-input {
+    width: 100%;
+    background: rgba(255,255,255,0.12);
+    border: 2px solid rgba(255,255,255,0.25);
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 16px;
+    color: var(--white);
+    outline: none;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .commitment-input::placeholder { color: rgba(255,255,255,0.4); }
+  .commitment-input:focus {
+    border-color: var(--gold);
+    background: rgba(255,255,255,0.18);
+  }
+
+  /* ── FOOTER ── */
+  .sheet-footer {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+    padding: 0 8px 8px;
+  }
+
+  /* ── CONTRACT FORM ── */
+  .contract-form {
+    background: #FDFAF5;
+    border: 2px solid var(--navy);
+    border-radius: 10px;
+    padding: 22px 22px 18px;
+    margin-bottom: 20px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05), 0 3px 12px rgba(13,27,62,0.1);
+    position: relative;
+  }
+  .contract-form::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--navy) 0%, var(--navy-light) 100%);
+    border-radius: 8px 8px 0 0;
+  }
+  .contract-title {
+    text-align: center;
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 24px;
+    color: var(--navy);
+    letter-spacing: 8px;
+    padding: 12px 0 4px;
+  }
+  .contract-subtitle {
+    text-align: center;
+    font-size: 12px;
+    color: var(--gray);
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+  }
+  .contract-section-label {
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--red-dark);
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1.5px dashed var(--gray-light);
+  }
+  .contract-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+  }
+  .contract-field {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    min-width: 180px;
+  }
+  .cf-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--navy-mid);
+    white-space: nowrap;
+    min-width: 68px;
+    text-align: right;
+  }
+  .cf-input {
+    flex: 1;
+    border: none;
+    border-bottom: 1.8px solid var(--navy-light);
+    border-radius: 0;
+    background: transparent;
+    padding: 5px 4px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 13.5px;
+    color: var(--text-dark);
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+  }
+  .cf-input:focus { border-color: var(--red); }
+  .cf-input::placeholder { color: #C5BDB0; font-size: 12px; }
+
+  .contract-cond-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  @media (max-width: 560px) { .contract-cond-grid { grid-template-columns: 1fr; } }
+  .cond-item {
+    background: #F5F7FF;
+    border: 1.5px solid #DCE3F5;
+    border-radius: 8px;
+    padding: 10px 12px;
+  }
+  .cond-label {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: var(--navy-mid);
+    margin-bottom: 6px;
+  }
+  .cond-value-wrap { display: flex; flex-direction: column; gap: 4px; }
+  .cond-note {
+    font-size: 11px;
+    color: var(--red-dark);
+    line-height: 1.4;
+  }
+
+  .contract-sign-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 2px solid var(--navy);
+    flex-wrap: wrap;
+  }
+  .contract-sign-box {
+    flex: 1;
+    min-width: 120px;
+    text-align: center;
+  }
+  .sign-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--navy-mid);
+    margin-bottom: 6px;
+  }
+  .sign-input {
+    border: none;
+    border-bottom: 1.8px solid var(--navy);
+    width: 100%;
+    background: transparent;
+    text-align: center;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    padding: 5px 4px;
+    outline: none;
+    color: var(--text-dark);
+  }
+  .sign-input::placeholder { color: #C5BDB0; font-size: 12px; }
+  .sign-input:focus { border-color: var(--red); }
+  .contract-date-box {
+    text-align: center;
+    flex: 1.2;
+    min-width: 140px;
+  }
+  .date-input {
+    border: none;
+    border-bottom: 1.8px solid var(--navy);
+    width: 100%;
+    background: transparent;
+    text-align: center;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+    padding: 5px 4px;
+    outline: none;
+    color: var(--text-dark);
+  }
+  .date-input::placeholder { color: #C5BDB0; font-size: 12px; }
+  .date-input:focus { border-color: var(--red); }
+
+
+  /* ── PREFILLED vs ACTIVE fields ── */
+  .cf-prefilled {
+    flex: 1;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 13.5px;
+    color: #555;
+    border-bottom: 1.8px solid #D0CCC5;
+    padding: 5px 4px;
+    display: inline-block;
+    width: 100%;
+    background: transparent;
+  }
+  .cf-active {
+    border-bottom-color: var(--red) !important;
+    background: #FFF8F8 !important;
+    font-weight: 600;
+  }
+  .cf-active::placeholder { color: #FFAAAA !important; }
+  .cond-item.cond-active {
+    background: #FFF5F5;
+    border-color: #FFCACA;
+  }
+  .sign-active {
+    border-bottom-color: var(--red) !important;
+    background: #FFF8F8 !important;
+  }
+  .sign-active::placeholder { color: #FFAAAA !important; }
+  .contract-fill-legend {
+    margin-top: 12px;
+    text-align: center;
+    font-size: 11.5px;
+    color: #888;
+    background: #F5F5F5;
+    border-radius: 6px;
+    padding: 7px 12px;
+    border: 1px dashed #CCC;
+  }
+
+  /* ── SAVING OVERLAY ── */
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 999;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .saving-overlay.active { display: flex; }
+  .saving-spinner {
+    width: 48px; height: 48px;
+    border: 5px solid rgba(255,255,255,0.2);
+    border-top-color: var(--red);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .saving-text {
+    color: #fff;
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+  }
 </style>
 </head>
 <body>
 
-<header>
-  <div class="hinner">
-    <div class="htop">
-      <div>
-        <p class="htag">⚡ 중학교 3학년 | 사회·도덕 | 노동권 탐구 활동</p>
-        <h1>🚩 청소년 노동권 구조대</h1>
-        <p class="hsub">내 권리, 내가 지킨다!</p>
-        <p class="hdesc">고용노동부·노동위원회 사이트를 직접 탐색하고, 모의 신청서를 작성해봐요.</p>
-      </div>
-      <div class="hbtns">
-        <button class="btn-save" onclick="saveAsImage()">📷 결과 이미지 저장</button>
-        <button class="btn-submit" onclick="submitForm()">✅ 제출 완료</button>
-      </div>
-    </div>
-    <div class="irow">
-      <div class="ifield"><label>🎓 학번</label><input type="text" id="f-id" placeholder="학번 입력" oninput="updateStatus()"></div>
-      <div class="ifield"><label>✏️ 이름</label><input type="text" id="f-name" placeholder="내 이름 입력" oninput="updateStatus()"></div>
-      <div class="ifield"><label>🤝 짝꿍 이름</label><input type="text" id="f-partner" placeholder="짝꿍 이름 입력" oninput="updateStatus()"></div>
-    </div>
-  </div>
-</header>
+<!-- SAVE BAR -->
+<div class="save-bar" id="save-bar">
+  <button class="btn-save" onclick="saveImage()">
+    <span class="icon">📸</span> 나의 활동지 이미지로 저장하기
+  </button>
+</div>
 
-<div class="statuswrap">
-  <div class="statusbar">
-    <span class="sdot"></span>
-    <span class="sname" id="sname">미입력 | 짝꿍: 미입력</span>
-    <span class="ssp"></span>
-    <span class="sbadge" id="sbadge" style="display:none"></span>
-    <span class="scnt">완료 <strong id="sdone">0</strong> / <strong id="stotal">1</strong></span>
+<!-- CAPTURE AREA -->
+<div id="capture-area">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-badge">🚨 중학교 사회·도덕 · 노동권 교육</div>
+    <div class="hero-main-row">
+      <div class="hero-left">
+        <div class="hero-title">청소년 <span>노동권</span><br>구조대</div>
+        <div class="hero-sub">내 권리를 알고, 지키고, 행동하라!</div>
+      </div>
+      <div class="hero-student-box">
+        <div class="hero-student-label">📋 학생 정보</div>
+        <input type="text" id="student-id" class="hero-input" placeholder="학번 입력" maxlength="10">
+        <input type="text" id="student-name" class="hero-input" placeholder="이름 입력" maxlength="10">
+      </div>
+    </div>
+    <div class="hero-emblem">🛡️</div>
+  </div>
+
+  <div class="sheet-body">
+
+    <!-- ══════ MISSION 1 ══════ -->
+    <div class="mission-block">
+      <div class="mission-header">
+        <span class="mission-num">MISSION 01</span>
+        <span class="mission-title-text">연소자(청소년) 근로계약서 작성하기</span>
+        <span class="mission-icon">📝</span>
+      </div>
+      <div class="mission-content">
+
+        <!-- 최저임금 알림 -->
+        <div class="wage-alert">
+          <div class="icon">💰</div>
+          <div class="text">
+            <strong>2026년 최저임금 안내</strong>
+            <span>청소년도 성인과 동일하게 적용! 이보다 낮으면 위법입니다.</span>
+          </div>
+          <div class="wage-amount">10,320원 / 시간</div>
+        </div>
+
+        <!-- 근로계약서 양식 -->
+        <div class="contract-form">
+          <div class="contract-title">근 로 계 약 서</div>
+          <div class="contract-subtitle">연소자(만 18세 미만) 아르바이트용</div>
+
+          <div class="contract-section-label">▶ 근로자 (갑)</div>
+          <div class="contract-row">
+            <div class="contract-field">
+              <span class="cf-label">이름</span>
+              <input type="text" class="cf-input cf-active" id="c-name" placeholder="본인 이름 직접 입력">
+            </div>
+            <div class="contract-field">
+              <span class="cf-label">생년월일</span>
+              <span class="cf-prefilled">2011. 03. 15</span>
+            </div>
+          </div>
+          <div class="contract-row">
+            <div class="contract-field" style="flex:1">
+              <span class="cf-label">주소</span>
+              <span class="cf-prefilled">서울특별시 서초구 내곡동 123번지</span>
+            </div>
+          </div>
+          <div class="contract-row">
+            <div class="contract-field">
+              <span class="cf-label">연락처</span>
+              <span class="cf-prefilled">010-1234-5678</span>
+            </div>
+            <div class="contract-field">
+              <span class="cf-label">학교/학년</span>
+              <span class="cf-prefilled">○○중학교 3학년</span>
+            </div>
+          </div>
+
+          <div class="contract-section-label" style="margin-top:14px;">▶ 사업주 (을)</div>
+          <div class="contract-row">
+            <div class="contract-field">
+              <span class="cf-label">상호(가게명)</span>
+              <input type="text" class="cf-input cf-active" id="c-biz" placeholder="가게 이름 직접 입력">
+            </div>
+            <div class="contract-field">
+              <span class="cf-label">대표자명</span>
+              <input type="text" class="cf-input cf-active" id="c-boss" placeholder="사장님 이름 직접 입력">
+            </div>
+          </div>
+          <div class="contract-row">
+            <div class="contract-field" style="flex:1">
+              <span class="cf-label">사업장 주소</span>
+              <span class="cf-prefilled">서울특별시 서초구 양재대로 456번지 1층</span>
+            </div>
+          </div>
+
+          <div class="contract-section-label" style="margin-top:14px;">▶ 근로 조건</div>
+          <div class="contract-cond-grid">
+            <div class="cond-item cond-active">
+              <div class="cond-label">① 임금 (시급) ✏️</div>
+              <div class="cond-value-wrap">
+                <input type="text" class="cf-input cf-active" id="f-wage" placeholder="직접 입력 (원)">
+                <span class="cond-note">※ 최저임금 <strong>10,320원</strong> 이상</span>
+              </div>
+            </div>
+            <div class="cond-item cond-active">
+              <div class="cond-label">② 하루 근로시간 ✏️</div>
+              <div class="cond-value-wrap">
+                <input type="text" class="cf-input cf-active" id="f-hours" placeholder="직접 입력 (시간)">
+                <span class="cond-note">※ 청소년 하루 최대 <strong>7시간</strong></span>
+              </div>
+            </div>
+            <div class="cond-item cond-active">
+              <div class="cond-label">③ 근무 요일 ✏️</div>
+              <div class="cond-value-wrap">
+                <input type="text" class="cf-input cf-active" id="f-days" placeholder="예) 토·일요일">
+              </div>
+            </div>
+            <div class="cond-item">
+              <div class="cond-label">④ 근무 시간대</div>
+              <div class="cond-value-wrap">
+                <span class="cf-prefilled">09:00 ~ 14:00</span>
+                <span class="cond-note">※ 야간(22시 이후) 근로 <strong>금지</strong></span>
+              </div>
+            </div>
+            <div class="cond-item">
+              <div class="cond-label">⑤ 근무 기간</div>
+              <div class="cond-value-wrap">
+                <span class="cf-prefilled">2026. 01. 05 ~ 2026. 02. 28</span>
+              </div>
+            </div>
+            <div class="cond-item">
+              <div class="cond-label">⑥ 임금 지급일</div>
+              <div class="cond-value-wrap">
+                <span class="cf-prefilled">매월 말일 (통장 입금)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contract-sign-row">
+            <div class="contract-sign-box">
+              <div class="sign-label">근로자 서명 ✏️</div>
+              <input type="text" class="sign-input sign-active" id="s-worker" placeholder="(직접 서명)">
+            </div>
+            <div class="contract-date-box">
+              <span class="cf-prefilled" style="font-size:13px;">2026년 1월 5일</span>
+            </div>
+            <div class="contract-sign-box">
+              <div class="sign-label">사업주 서명 ✏️</div>
+              <input type="text" class="sign-input sign-active" id="s-boss" placeholder="(직접 서명)">
+            </div>
+          </div>
+
+          <div class="contract-fill-legend">
+            ✏️ 표시 항목만 직접 입력하세요 &nbsp;|&nbsp; 나머지는 예시로 미리 채워진 내용입니다
+          </div>
+        </div>
+
+        <!-- 체크박스 목록 -->
+        <div class="check-section-title" style="margin-top:20px;">✅ 근로계약서 필수 확인 항목</div>
+        <div class="checklist">
+          <div class="check-item" onclick="toggleCheck(this)">
+            <input type="checkbox">
+            <div class="custom-check">✓</div>
+            <span class="check-label">🌙 야간근로(22시 이후) 금지 확인</span>
+          </div>
+          <div class="check-item" onclick="toggleCheck(this)">
+            <input type="checkbox">
+            <div class="custom-check">✓</div>
+            <span class="check-label">📄 가족관계증명서 제출</span>
+          </div>
+          <div class="check-item" onclick="toggleCheck(this)">
+            <input type="checkbox">
+            <div class="custom-check">✓</div>
+            <span class="check-label">✍️ 부모님(친권자) 동의서 제출</span>
+          </div>
+          <div class="check-item" onclick="toggleCheck(this)">
+            <input type="checkbox">
+            <div class="custom-check">✓</div>
+            <span class="check-label">🖊️ 본인 직접 서명 완료</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ══════ MISSION 2 ══════ -->
+    <div class="mission-block">
+      <div class="mission-header">
+        <span class="mission-num">MISSION 02</span>
+        <span class="mission-title-text">임금체불 대응 & 감정 주도권</span>
+        <span class="mission-icon">⚔️</span>
+      </div>
+      <div class="mission-content">
+
+        <!-- 시나리오 -->
+        <div class="scenario-box">
+          <div class="scenario-tag">📰 시나리오</div>
+          <div class="scenario-text">
+            중학교 3학년 <strong>내곡이</strong>는 겨울방학을 맞아 동네 카페에서 아르바이트를 시작했다.<br>
+            그런데 사장님이 <span class="amount">3개월치 알바비 120만 원</span>을 계속 미루고 있다.<br>
+            "다음 달에 줄게"라는 말만 반복하며 입금이 없는 상황. 내곡이는 어떻게 해야 할까?
+          </div>
+        </div>
+
+        <!-- 감정 주도권 -->
+        <div class="emotion-section">
+          <div class="emotion-title">💡 사회정서교육 — 감정의 주도권</div>
+          <div class="emotion-q">
+            <label>Q1. 지금 내곡이의 기분은? (내 생각 적기)</label>
+            <input type="text" id="e-mood" placeholder="예) 억울하다, 화가 난다, 무섭다...">
+          </div>
+          <div class="emotion-q">
+            <label>Q2. 그 감정의 진짜 원인은 무엇일까?</label>
+            <input type="text" id="e-cause" placeholder="예) 나의 정당한 권리가 침해되었기 때문!">
+            <div class="emotion-hint">💬 힌트: "나의 정당한 권리가 침해되었기 때문!"</div>
+          </div>
+          <div class="action-banner">
+            <span class="arrow">💪</span>
+            <span>핵심: 부정적 감정을 <u>알아차리고</u>, <strong>'진정서 제출'이라는 주도적 행동</strong>으로 방향을 바꾸자!</span>
+          </div>
+        </div>
+
+        <!-- 노동포털 정보 탐색 -->
+        <div class="section-divider"><span>🔍 고용노동부 노동포털 → 자주 찾는 민원 → 임금체불진정서</span></div>
+        <table class="portal-table">
+          <thead>
+            <tr>
+              <th>조사 항목</th>
+              <th>탐색 결과 입력</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>① 신청 자격</td>
+              <td><input type="text" id="p1" placeholder="직접 조사 후 입력하기"></td>
+            </tr>
+            <tr>
+              <td>② 처리 기간</td>
+              <td><input type="text" id="p2" placeholder="직접 조사 후 입력하기"></td>
+            </tr>
+            <tr>
+              <td>③ 민원 접수 방법</td>
+              <td><input type="text" id="p3" placeholder="직접 조사 후 입력하기"></td>
+            </tr>
+            <tr>
+              <td>④ 수수료</td>
+              <td><input type="text" id="p4" placeholder="직접 조사 후 입력하기"></td>
+            </tr>
+            <tr>
+              <td>⑤ 접수 및 처리 기관</td>
+              <td><input type="text" id="p5" placeholder="직접 조사 후 입력하기"></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- 필수 증거 수집 -->
+        <div class="section-divider"><span>🗂️ 필수 증거 수집 체크리스트</span></div>
+        <div class="checklist">
+          <div class="check-item" onclick="toggleCheck(this)">
+            <input type="checkbox">
+            <div class="custom-check">✓</div>
+            <span class="check-label">🕐 출퇴근 기록 (캡처 or 수기)</span>
+          </div>
+          <div class="check-item" onclick="toggleCheck(this)">
+            <input type="checkbox">
+            <div class="custom-check">✓</div>
+            <span class="check-label">💬 급여 관련 문자 메시지</span>
+          </div>
+          <div class="check-item" onclick="toggleCheck(this)">
+            <input type="checkbox">
+            <div class="custom-check">✓</div>
+            <span class="check-label">🎙️ 사장과의 대화 녹취파일</span>
+          </div>
+          <div class="check-item" onclick="toggleCheck(this)">
+            <input type="checkbox">
+            <div class="custom-check">✓</div>
+            <span class="check-label">📋 근로계약서 사본</span>
+          </div>
+          <div class="check-item" onclick="toggleCheck(this)">
+            <input type="checkbox">
+            <div class="custom-check">✓</div>
+            <span class="check-label">🏦 통장 입금 내역 (미지급 확인)</span>
+          </div>
+          <div class="check-item" onclick="toggleCheck(this)">
+            <input type="checkbox">
+            <div class="custom-check">✓</div>
+            <span class="check-label">📷 근무 장소·업무 증빙 사진</span>
+          </div>
+        </div>
+
+        <!-- 진정서 예시 보기 버튼 -->
+        <div class="petition-btn-wrap" style="margin-top:20px;">
+          <button class="btn-example" onclick="document.getElementById('petition-modal').classList.add('active')">
+            📄 [예시 보기] 임금체불 진정서 작성법
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ══════ 오늘의 다짐 ══════ -->
+    <div class="commitment-block">
+      <div class="commitment-label">✊ 오늘의 다짐</div>
+      <input class="commitment-input" type="text" id="commitment"
+        placeholder="노동권에 대해 배운 오늘, 나는 ...">
+    </div>
+
+  </div><!-- /sheet-body -->
+
+  <div class="sheet-footer">청소년 노동권 구조대 · 사회/도덕 수업 학습지 · 본 자료는 교육 목적으로 제작되었습니다.</div>
+
+</div><!-- /capture-area -->
+
+<!-- ══════ 진정서 모달 ══════ -->
+<div class="modal-overlay" id="petition-modal">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h3>📄 임금체불 진정서 작성 예시</h3>
+      <button class="modal-close" onclick="document.getElementById('petition-modal').classList.remove('active')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="petition-sample">
+        <div class="p-title">진 정 서</div>
+        <div class="p-section">▶ 진정인 (근로자)</div>
+        이름: <span class="p-fill">홍길동</span> &nbsp; 생년월일: <span class="p-fill">2009.03.15</span><br>
+        주소: <span class="p-fill">○○시 ○○구 ○○동 ○○아파트</span><br>
+        연락처: <span class="p-fill">010-○○○○-○○○○</span>
+
+        <div class="p-section">▶ 피진정인 (사업주)</div>
+        상호명: <span class="p-fill">○○편의점</span><br>
+        대표자명: <span class="p-fill">김○○</span><br>
+        사업장 주소: <span class="p-fill">○○시 ○○구 ○○로 ○○번지</span>
+
+        <div class="p-section">▶ 진정 내용</div>
+        본인은 <span class="p-fill">2025년 9월 1일</span>부터 <span class="p-fill">2025년 11월 30일</span>까지
+        위 사업장에서 근무하였으나, 임금 총 <span class="p-fill">1,200,000원</span>을 지급받지 못하였습니다.<br><br>
+        사업주는 수차례 독촉에도 불구하고 지급을 미루고 있어, 근로기준법 제36조 및 제109조에 의거하여 진정을 제기합니다.
+
+        <div class="p-section">▶ 첨부 서류</div>
+        1. 근로계약서 사본 1부<br>
+        2. 출퇴근 기록 1부<br>
+        3. 급여 미지급 관련 문자 메시지 캡처 1부
+
+        <br><br>
+        <div style="text-align:right;">
+          <span class="p-fill">2025</span>년 <span class="p-fill">12</span>월 <span class="p-fill">○○</span>일<br>
+          진정인: <span class="p-fill">홍 길 동</span> (서명/인)
+        </div>
+      </div>
+      <div class="petition-tip">
+        💡 <strong>작성 팁</strong><br>
+        • 날짜·금액·장소는 최대한 구체적으로!<br>
+        • 고용노동부 홈페이지(moel.go.kr) → 민원마당 → 온라인 진정 신청 가능<br>
+        • 미성년자는 부모님과 함께 방문하거나 청소년근로권익센터(1644-3119) 무료 상담 이용
+      </div>
+    </div>
   </div>
 </div>
 
-<main>
-
-  <!-- Mission guide -->
-  <div class="whitebox">
-    <div class="stitle"><div class="sbar" style="background:var(--gold)"></div><h2>📌 미션 안내</h2></div>
-    <div class="ggrid">
-      <div class="gcard" style="background:#FFF4EE;border-color:#C84B11;">
-        <p class="gl" style="color:#C84B11;">🔴 필수 미션 — 전체 학생</p>
-        <p class="gt">CASE 1 · 임금체불</p>
-        <p class="gd">사이트 탐색 → 스크린샷 → 모의 진정서 작성</p>
-      </div>
-      <div class="gcard" style="background:#EEF2FF;border-color:#1B4FBF;">
-        <p class="gl" style="color:#1B4FBF;">🔵 선택 미션 — 짝꿍과 택 1</p>
-        <p class="gt">CASE 2 · 3 · 4 중 1개 선택</p>
-        <p class="gd">사이트 탐색 → 스크린샷 → 모의 신청서·신고서 작성</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- REQUIRED: CASE 1 -->
-  <div>
-    <div class="sec-hd"><div class="sbar" style="background:#C84B11;height:28px;"></div><div><h2>🔴 필수 미션</h2></div></div>
-    <div class="ccard active" id="card-1" style="background:#FFF4EE;border-color:#C84B1140;">
-      <div class="chdr" style="background:#C84B11;" onclick="toggleCard(1)">
-        <div class="chl">
-          <span class="cicon">💰</span>
-          <div>
-            <div class="cbadgerow">CASE 1 · 🔴 필수 미션</div>
-            <div class="ctitle">3개월치 알바비가 증발했다!</div>
-          </div>
-        </div>
-        <div class="chr"><span class="reqtag">임금 체불</span><span class="tarrow" id="arr1">▲</span></div>
-      </div>
-      <div class="cbody" id="body-1">
-
-        <div class="scenbox">
-          <p class="boxlbl" style="color:#C84B11;">📋 시나리오</p>
-          <p class="scentext">편의점에서 3개월간 성실히 일한 민준이. 그런데 사장님이 '다음 달에 줄게'를 반복하다 연락이 두절됐습니다. 밀린 알바비는 무려 1,200,000원. 민준이는 어떻게 해야 할까요?</p>
-        </div>
-
-        <!-- SEL -->
-        <div class="selbox">
-          <div class="selhdr"><span>🧠</span><span class="selsub">사회정서기술 —</span><span class="selskill">&nbsp;감정의 주도권</span></div>
-          <div class="selqa">
-            <p class="sellbl">💬 탐색하기 전에 먼저 생각해봐요</p>
-            <p class="selq">민준이라면 지금 어떤 감정이 들까요? 그 감정의 원인은 무엇이고, 어떻게 감정의 주도권을 잡을 수 있을지 짝꿍과 이야기해 보세요.</p>
-            <textarea id="sel-1" placeholder="짝꿍과 이야기 나눈 내용을 적어보세요..." style="border-color:#C84B1150;" onfocus="this.style.boxShadow='0 0 0 2px #C84B11'" onblur="this.style.boxShadow=''"></textarea>
-          </div>
-        </div>
-
-        <!-- Site info (no link - site not accessible) -->
-        <div class="sitebox" style="background:#C84B1112;">
-          <span class="siteico">🔍</span>
-          <div>
-            <p class="sitelbl" style="color:#C84B11;">① 탐색할 사이트</p>
-            <p class="sitename">고용노동부 민원마당</p>
-            <p class="sitepath">민원신청 → 서식민원 → 임금체불 진정서 찾기</p>
-          </div>
-        </div>
-
-        <!-- Upload -->
-        <div>
-          <p class="uplbl" style="color:#C84B11;">② 탐색 스크린샷 — 신청 화면을 캡처해서 올려주세요</p>
-          <div class="upzone" id="zone-1" onclick="triggerFile(1)" ondrop="handleDrop(event,1)" ondragover="event.preventDefault()">
-            <div class="upph" id="ph-1"><span>📸</span><p>신청 화면 캡처 업로드</p><small>클릭하거나 파일을 드래그하세요</small></div>
-            <img id="prev-1" style="display:none" alt="">
-          </div>
-          <input type="file" id="file-1" accept="image/*" style="display:none" onchange="handleFile(event,1)">
-        </div>
-
-        <!-- Evidence -->
-        <div class="evbox">
-          <p class="evlbl">🗂️ 필수 증거 수집 체크리스트</p>
-          <div class="evitem" onclick="toggleEv(this,'#C84B11')"><div class="evck">✓</div><span class="evtxt">출퇴근 기록 (캡처·사진)</span></div>
-          <div class="evitem" onclick="toggleEv(this,'#C84B11')"><div class="evck">✓</div><span class="evtxt">통화 녹음 또는 문자 내역</span></div>
-          <div class="evitem" onclick="toggleEv(this,'#C84B11')"><div class="evck">✓</div><span class="evtxt">근로계약서 사진</span></div>
-        </div>
-
-        <!-- MOCK FORM: 임금체불 진정서 -->
-        <div class="formbox" style="border-color:#C84B11;">
-          <div class="formhdr" style="background:#C84B11;">
-            <span class="formhdr-icon">📄</span>
-            <span class="formhdr-title">③ 모의 임금체불 진정서 작성</span>
-            <span class="formhdr-sub">고용노동부 민원마당 양식 기준</span>
-          </div>
-          <div class="formbody">
-            <div class="form-notice" style="background:#FFF4EE;border:1px solid #C84B1130;color:#7A2E06;">
-              💡 실제 진정서에서 중요한 항목만 골라 모의로 작성해봐요. 민준이의 상황을 바탕으로 적어보세요!
-            </div>
-            <div class="form-grid">
-              <div class="fgroup">
-                <label>신청인 (진정인) 이름</label>
-                <input type="text" placeholder="예: 민준 (본인 이름을 써도 됩니다)" onfocus="this.style.boxShadow='0 0 0 2px #C84B11'" onblur="this.style.boxShadow=''">
-              </div>
-              <div class="fgroup">
-                <label>피신청인 (사업주) 이름 / 상호</label>
-                <input type="text" placeholder="예: 홍길동 / ○○편의점" onfocus="this.style.boxShadow='0 0 0 2px #C84B11'" onblur="this.style.boxShadow=''">
-              </div>
-            </div>
-            <div class="form-divider"></div>
-            <div class="form-grid">
-              <div class="fgroup">
-                <label>미지급 임금액</label>
-                <input type="text" placeholder="예: 1,200,000원" onfocus="this.style.boxShadow='0 0 0 2px #C84B11'" onblur="this.style.boxShadow=''">
-                <span class="hint">근로한 기간과 시급을 바탕으로 계산해보세요.</span>
-              </div>
-              <div class="fgroup">
-                <label>근로 기간</label>
-                <input type="text" placeholder="예: 2024년 9월 1일 ~ 11월 30일" onfocus="this.style.boxShadow='0 0 0 2px #C84B11'" onblur="this.style.boxShadow=''">
-              </div>
-            </div>
-            <div class="form-divider"></div>
-            <div class="form-grid full">
-              <div class="fgroup">
-                <label>피해 사실 요약 <span style="font-weight:400;color:var(--s4)">(언제, 어디서, 무슨 일이 있었는지 육하원칙으로)</span></label>
-                <textarea placeholder="예: 저는 2024년 9월부터 11월까지 ○○편의점에서 근무하였으나, 사업주 홍길동이 임금 지급을 계속 미루다 연락을 끊어 3개월치 임금 합계 1,200,000원을 받지 못하였습니다." onfocus="this.style.boxShadow='0 0 0 2px #C84B11'" onblur="this.style.boxShadow=''" style="min-height:90px;border-color:#E2E8F0;"></textarea>
-              </div>
-            </div>
-            <div class="form-grid full">
-              <div class="fgroup">
-                <label>요구 사항 (진정 취지)</label>
-                <textarea placeholder="예: 위 사실에 따라 미지급 임금 1,200,000원의 즉각 지급을 요청합니다." onfocus="this.style.boxShadow='0 0 0 2px #C84B11'" onblur="this.style.boxShadow=''" style="min-height:60px;border-color:#E2E8F0;"></textarea>
-              </div>
-            </div>
-            <div class="form-stamp">
-              <span class="stamp-label">제출처:</span>
-              <span class="stamp-box" style="border-color:#C84B11;color:#C84B11;">고용노동부 (인)</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <!-- OPTIONAL -->
-  <div>
-    <div class="sec-hd">
-      <div class="sbar" style="background:#1B4FBF;height:28px;"></div>
-      <div><h2>🔵 선택 미션 — 짝꿍과 1개 선택</h2><p>카드 제목을 클릭하면 선택됩니다.</p></div>
-    </div>
-    <div class="optgrid">
-
-      <!-- CASE 2 -->
-      <div class="ccard faded" id="card-2" style="background:#EEF2FF;">
-        <div class="chdr" id="hdr-2" style="background:#94A3B8;" onclick="selectOpt(2)">
-          <div class="chl"><span class="cicon">📵</span><div><div class="cbadgerow">CASE 2 · 🔵 선택 미션</div><div class="ctitle">문자 한 통으로 해고 통보!</div></div></div>
-          <div class="chr"><span class="chosenpill" id="pill-2">선택하기</span><span class="tarrow" id="arr2">▼</span></div>
-        </div>
-        <div class="cbody" id="body-2" style="display:none;">
-          <div class="scenbox"><p class="boxlbl" style="color:#1B4FBF;">📋 시나리오</p><p class="scentext">5인 이상 사업장 카페에서 6개월째 일하던 지수. 어느 날 갑자기 '내일부터 나오지 마세요'라는 문자 한 통을 받았습니다. 아무런 사전 예고도, 이유 설명도 없었습니다.</p></div>
-          <div class="selbox">
-            <div class="selhdr"><span>🧠</span><span class="selsub">사회정서기술 —</span><span class="selskill">&nbsp;공동체 가치 참여</span></div>
-            <div class="selqa">
-              <p class="sellbl">💬 탐색하기 전에 먼저 생각해봐요</p>
-              <p class="selq">지수가 갑자기 해고 문자를 받았을 때 어떤 감정이 들까요? 이 상황에서 공동체의 한 사람으로서 내가 할 수 있는 일은 무엇일까요?</p>
-              <textarea id="sel-2" placeholder="짝꿍과 이야기 나눈 내용을 적어보세요..." style="border-color:#1B4FBF50;" onfocus="this.style.boxShadow='0 0 0 2px #1B4FBF'" onblur="this.style.boxShadow=''"></textarea>
-            </div>
-          </div>
-          <a class="sitebox" style="background:#1B4FBF12;" href="https://www.nlrc.go.kr" target="_blank" rel="noopener">
-            <span class="siteico">🔍</span>
-            <div><p class="sitelbl" style="color:#1B4FBF;">① 탐색할 사이트</p><p class="sitename">중앙노동위원회</p><p class="sitepath">구제신청 → 부당해고 구제신청서 찾기</p></div>
-          </a>
-          <div>
-            <p class="uplbl" style="color:#1B4FBF;">② 탐색 스크린샷 — 신청 화면을 캡처해서 올려주세요</p>
-            <div class="upzone" id="zone-2" onclick="triggerFile(2)" ondrop="handleDrop(event,2)" ondragover="event.preventDefault()">
-              <div class="upph" id="ph-2"><span>📸</span><p>신청 화면 캡처 업로드</p><small>클릭하거나 드래그하세요</small></div>
-              <img id="prev-2" style="display:none" alt="">
-            </div>
-            <input type="file" id="file-2" accept="image/*" style="display:none" onchange="handleFile(event,2)">
-          </div>
-          <div class="evbox">
-            <p class="evlbl">🗂️ 필수 증거 수집 체크리스트</p>
-            <div class="evitem" onclick="toggleEv(this,'#1B4FBF')"><div class="evck">✓</div><span class="evtxt">해고 문자 캡처 또는 녹취록</span></div>
-            <div class="evitem" onclick="toggleEv(this,'#1B4FBF')"><div class="evck">✓</div><span class="evtxt">근로계약서 또는 급여명세서</span></div>
-            <div class="evitem" onclick="toggleEv(this,'#1B4FBF')"><div class="evck">✓</div><span class="evtxt">출퇴근 증빙 자료</span></div>
-          </div>
-          <!-- MOCK FORM: 부당해고 구제신청서 -->
-          <div class="formbox" style="border-color:#1B4FBF;">
-            <div class="formhdr" style="background:#1B4FBF;">
-              <span class="formhdr-icon">📄</span>
-              <span class="formhdr-title">③ 모의 부당해고 구제신청서 작성</span>
-              <span class="formhdr-sub">노동위원회 양식 기준</span>
-            </div>
-            <div class="formbody">
-              <div class="form-notice" style="background:#EEF2FF;border:1px solid #1B4FBF30;color:#0F2461;">
-                💡 지수의 상황을 바탕으로 부당해고 구제신청서 핵심 항목을 작성해봐요!
-              </div>
-              <div class="form-grid">
-                <div class="fgroup"><label>신청인 (근로자) 이름</label><input type="text" placeholder="예: 지수" onfocus="this.style.boxShadow='0 0 0 2px #1B4FBF'" onblur="this.style.boxShadow=''"></div>
-                <div class="fgroup"><label>피신청인 (사업주/회사명)</label><input type="text" placeholder="예: ○○카페 / 대표 홍길동" onfocus="this.style.boxShadow='0 0 0 2px #1B4FBF'" onblur="this.style.boxShadow=''"></div>
-              </div>
-              <div class="form-divider"></div>
-              <div class="form-grid">
-                <div class="fgroup"><label>해고 통보일</label><input type="text" placeholder="예: 2024년 12월 1일" onfocus="this.style.boxShadow='0 0 0 2px #1B4FBF'" onblur="this.style.boxShadow=''"></div>
-                <div class="fgroup"><label>근로 기간 (입사일 ~ 해고일)</label><input type="text" placeholder="예: 2024년 6월 1일 ~ 12월 1일" onfocus="this.style.boxShadow='0 0 0 2px #1B4FBF'" onblur="this.style.boxShadow=''"></div>
-              </div>
-              <div class="form-divider"></div>
-              <div class="form-grid full">
-                <div class="fgroup">
-                  <label>부당해고라고 생각하는 이유</label>
-                  <textarea placeholder="예: 사업주가 아무런 사전 예고 없이 문자 메시지로 해고를 통보하였으며, 해고의 이유와 절차에 대한 서면 통지를 받지 못했습니다. 근로기준법 제27조에 따르면 해고는 반드시 서면으로 통보해야 합니다." onfocus="this.style.boxShadow='0 0 0 2px #1B4FBF'" onblur="this.style.boxShadow=''" style="min-height:90px;border-color:#E2E8F0;"></textarea>
-                </div>
-              </div>
-              <div class="form-grid full">
-                <div class="fgroup">
-                  <label>구제 신청 취지 (바라는 것)</label>
-                  <textarea placeholder="예: 부당해고를 취소하고 원직에 복직시켜 주시기 바랍니다. 또는 해고 기간 동안의 임금 상당액을 지급해 주시기 바랍니다." onfocus="this.style.boxShadow='0 0 0 2px #1B4FBF'" onblur="this.style.boxShadow=''" style="min-height:60px;border-color:#E2E8F0;"></textarea>
-                </div>
-              </div>
-              <div class="form-stamp">
-                <span class="stamp-label">제출처:</span>
-                <span class="stamp-box" style="border-color:#1B4FBF;color:#1B4FBF;">지방노동위원회 (인)</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- CASE 3 -->
-      <div class="ccard faded" id="card-3" style="background:#EDFAF4;">
-        <div class="chdr" id="hdr-3" style="background:#94A3B8;" onclick="selectOpt(3)">
-          <div class="chl"><span class="cicon">⚖️</span><div><div class="cbadgerow">CASE 3 · 🔵 선택 미션</div><div class="ctitle">수습이라고 최저임금도 안 준다고?</div></div></div>
-          <div class="chr"><span class="chosenpill" id="pill-3">선택하기</span><span class="tarrow" id="arr3">▼</span></div>
-        </div>
-        <div class="cbody" id="body-3" style="display:none;">
-          <div class="scenbox"><p class="boxlbl" style="color:#0A7A5A;">📋 시나리오</p><p class="scentext">음식점에 취직한 현서. 사장님은 '수습 기간 3개월은 최저임금의 80%만 받아야 해'라고 했습니다. 근로계약서도 제대로 써주지 않았고요. 이게 정말 합법일까요?</p></div>
-          <div class="selbox">
-            <div class="selhdr"><span>🧠</span><span class="selsub">사회정서기술 —</span><span class="selskill">&nbsp;감정의 원인 파악</span></div>
-            <div class="selqa">
-              <p class="sellbl">💬 탐색하기 전에 먼저 생각해봐요</p>
-              <p class="selq">현서는 지금 어떤 감정일까요? 억울하거나 화가 날 때 그 감정의 원인이 정말 어디에 있는지 짝꿍과 함께 생각해 보세요.</p>
-              <textarea id="sel-3" placeholder="짝꿍과 이야기 나눈 내용을 적어보세요..." style="border-color:#0A7A5A50;" onfocus="this.style.boxShadow='0 0 0 2px #0A7A5A'" onblur="this.style.boxShadow=''"></textarea>
-            </div>
-          </div>
-          <a class="sitebox" style="background:#0A7A5A12;" href="https://labor.moel.go.kr/main/main.do" target="_blank" rel="noopener">
-            <span class="siteico">🔍</span>
-            <div><p class="sitelbl" style="color:#0A7A5A;">① 탐색할 사이트</p><p class="sitename">고용노동부 노동포털</p><p class="sitepath">신고·제보 → 최저임금 위반 신고</p></div>
-          </a>
-          <div>
-            <p class="uplbl" style="color:#0A7A5A;">② 탐색 스크린샷 — 신고 화면을 캡처해서 올려주세요</p>
-            <div class="upzone" id="zone-3" onclick="triggerFile(3)" ondrop="handleDrop(event,3)" ondragover="event.preventDefault()">
-              <div class="upph" id="ph-3"><span>📸</span><p>신고 화면 캡처 업로드</p><small>클릭하거나 드래그하세요</small></div>
-              <img id="prev-3" style="display:none" alt="">
-            </div>
-            <input type="file" id="file-3" accept="image/*" style="display:none" onchange="handleFile(event,3)">
-          </div>
-          <div class="evbox">
-            <p class="evlbl">🗂️ 필수 증거 수집 체크리스트</p>
-            <div class="evitem" onclick="toggleEv(this,'#0A7A5A')"><div class="evck">✓</div><span class="evtxt">급여명세서 또는 통장 이체 내역</span></div>
-            <div class="evitem" onclick="toggleEv(this,'#0A7A5A')"><div class="evck">✓</div><span class="evtxt">근로계약서 (없으면 그 사실 자체가 증거)</span></div>
-            <div class="evitem" onclick="toggleEv(this,'#0A7A5A')"><div class="evck">✓</div><span class="evtxt">실제 근무 시간 기록</span></div>
-          </div>
-          <!-- MOCK FORM: 최저임금 위반 신고서 -->
-          <div class="formbox" style="border-color:#0A7A5A;">
-            <div class="formhdr" style="background:#0A7A5A;">
-              <span class="formhdr-icon">📄</span>
-              <span class="formhdr-title">③ 모의 최저임금 위반 신고서 작성</span>
-              <span class="formhdr-sub">고용노동부 양식 기준</span>
-            </div>
-            <div class="formbody">
-              <div class="form-notice" style="background:#EDFAF4;border:1px solid #0A7A5A30;color:#064E3B;">
-                💡 현서의 상황을 바탕으로 최저임금 위반 신고서를 작성해봐요!
-              </div>
-              <div class="form-grid">
-                <div class="fgroup"><label>신고인 이름</label><input type="text" placeholder="예: 현서" onfocus="this.style.boxShadow='0 0 0 2px #0A7A5A'" onblur="this.style.boxShadow=''"></div>
-                <div class="fgroup"><label>사업장명 / 사업주</label><input type="text" placeholder="예: ○○음식점 / 대표 홍길동" onfocus="this.style.boxShadow='0 0 0 2px #0A7A5A'" onblur="this.style.boxShadow=''"></div>
-              </div>
-              <div class="form-divider"></div>
-              <div class="form-grid">
-                <div class="fgroup">
-                  <label>실제 지급받은 시급</label>
-                  <input type="text" placeholder="예: 시간당 7,530원 (최저임금 80%)" onfocus="this.style.boxShadow='0 0 0 2px #0A7A5A'" onblur="this.style.boxShadow=''">
-                  <span class="hint">※ 2024년 최저임금: 시간당 9,860원</span>
-                </div>
-                <div class="fgroup"><label>근로 기간</label><input type="text" placeholder="예: 2024년 10월 1일 ~ 현재" onfocus="this.style.boxShadow='0 0 0 2px #0A7A5A'" onblur="this.style.boxShadow=''"></div>
-              </div>
-              <div class="form-divider"></div>
-              <div class="form-grid full">
-                <div class="fgroup">
-                  <label>위반 내용 (구체적으로)</label>
-                  <textarea placeholder="예: 사업주는 수습 기간을 이유로 최저임금의 80%만 지급하였으나, 1년 미만 근로계약을 체결한 단순 노무직 근로자에게는 수습 기간 감액 규정이 적용되지 않습니다. 또한 근로계약서를 서면으로 교부하지 않았습니다." onfocus="this.style.boxShadow='0 0 0 2px #0A7A5A'" onblur="this.style.boxShadow=''" style="min-height:90px;border-color:#E2E8F0;"></textarea>
-                </div>
-              </div>
-              <div class="form-stamp">
-                <span class="stamp-label">제출처:</span>
-                <span class="stamp-box" style="border-color:#0A7A5A;color:#0A7A5A;">고용노동부 (인)</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- CASE 4 -->
-      <div class="ccard faded" id="card-4" style="background:#F5EEFF;">
-        <div class="chdr" id="hdr-4" style="background:#94A3B8;" onclick="selectOpt(4)">
-          <div class="chl"><span class="cicon">😤</span><div><div class="cbadgerow">CASE 4 · 🔵 선택 미션</div><div class="ctitle">심부름에 욕설까지… 이건 괴롭힘!</div></div></div>
-          <div class="chr"><span class="chosenpill" id="pill-4">선택하기</span><span class="tarrow" id="arr4">▼</span></div>
-        </div>
-        <div class="cbody" id="body-4" style="display:none;">
-          <div class="scenbox"><p class="boxlbl" style="color:#7B2FBE;">📋 시나리오</p><p class="scentext">마트 아르바이트 중인 예원이. 팀장은 매일 개인 심부름을 시키고, '머리가 나쁘다'며 모욕적인 말을 반복합니다. 다른 직원들 앞에서 창피를 주기도 해요.</p></div>
-          <div class="selbox">
-            <div class="selhdr"><span>🧠</span><span class="selsub">사회정서기술 —</span><span class="selskill">&nbsp;공동체 가치 참여</span></div>
-            <div class="selqa">
-              <p class="sellbl">💬 탐색하기 전에 먼저 생각해봐요</p>
-              <p class="selq">매일 괴롭힘을 당하는 예원이는 어떤 감정일까요? 건강한 공동체를 위해 내가 할 수 있는 행동은 무엇인지 짝꿍과 이야기해 보세요.</p>
-              <textarea id="sel-4" placeholder="짝꿍과 이야기 나눈 내용을 적어보세요..." style="border-color:#7B2FBE50;" onfocus="this.style.boxShadow='0 0 0 2px #7B2FBE'" onblur="this.style.boxShadow=''"></textarea>
-            </div>
-          </div>
-          <a class="sitebox" style="background:#7B2FBE12;" href="https://labor.moel.go.kr/main/main.do" target="_blank" rel="noopener">
-            <span class="siteico">🔍</span>
-            <div><p class="sitelbl" style="color:#7B2FBE;">① 탐색할 사이트</p><p class="sitename">고용노동부 노동포털</p><p class="sitepath">신고·제보 → 직장 내 괴롭힘 신고</p></div>
-          </a>
-          <div>
-            <p class="uplbl" style="color:#7B2FBE;">② 탐색 스크린샷 — 신고 화면을 캡처해서 올려주세요</p>
-            <div class="upzone" id="zone-4" onclick="triggerFile(4)" ondrop="handleDrop(event,4)" ondragover="event.preventDefault()">
-              <div class="upph" id="ph-4"><span>📸</span><p>신고 화면 캡처 업로드</p><small>클릭하거나 드래그하세요</small></div>
-              <img id="prev-4" style="display:none" alt="">
-            </div>
-            <input type="file" id="file-4" accept="image/*" style="display:none" onchange="handleFile(event,4)">
-          </div>
-          <div class="evbox">
-            <p class="evlbl">🗂️ 필수 증거 수집 체크리스트</p>
-            <div class="evitem" onclick="toggleEv(this,'#7B2FBE')"><div class="evck">✓</div><span class="evtxt">괴롭힘 상황 메모 (날짜·장소·내용·목격자)</span></div>
-            <div class="evitem" onclick="toggleEv(this,'#7B2FBE')"><div class="evck">✓</div><span class="evtxt">문자·메신저 캡처</span></div>
-            <div class="evitem" onclick="toggleEv(this,'#7B2FBE')"><div class="evck">✓</div><span class="evtxt">목격자 진술서 (가능하면)</span></div>
-          </div>
-          <!-- MOCK FORM: 직장 내 괴롭힘 신고서 -->
-          <div class="formbox" style="border-color:#7B2FBE;">
-            <div class="formhdr" style="background:#7B2FBE;">
-              <span class="formhdr-icon">📄</span>
-              <span class="formhdr-title">③ 모의 직장 내 괴롭힘 신고서 작성</span>
-              <span class="formhdr-sub">고용노동부 양식 기준</span>
-            </div>
-            <div class="formbody">
-              <div class="form-notice" style="background:#F5EEFF;border:1px solid #7B2FBE30;color:#4C1D95;">
-                💡 예원이의 상황을 바탕으로 직장 내 괴롭힘 신고서를 작성해봐요!
-              </div>
-              <div class="form-grid">
-                <div class="fgroup"><label>신고인 이름</label><input type="text" placeholder="예: 예원" onfocus="this.style.boxShadow='0 0 0 2px #7B2FBE'" onblur="this.style.boxShadow=''"></div>
-                <div class="fgroup"><label>가해자 (행위자) 이름·직위</label><input type="text" placeholder="예: ○○마트 팀장 홍길동" onfocus="this.style.boxShadow='0 0 0 2px #7B2FBE'" onblur="this.style.boxShadow=''"></div>
-              </div>
-              <div class="form-divider"></div>
-              <div class="form-grid">
-                <div class="fgroup"><label>괴롭힘 발생 기간</label><input type="text" placeholder="예: 2024년 10월 ~ 현재 (매일 반복)" onfocus="this.style.boxShadow='0 0 0 2px #7B2FBE'" onblur="this.style.boxShadow=''"></div>
-                <div class="fgroup"><label>괴롭힘 유형</label>
-                  <select onfocus="this.style.boxShadow='0 0 0 2px #7B2FBE'" onblur="this.style.boxShadow=''">
-                    <option value="">선택하세요</option>
-                    <option>언어적 괴롭힘 (폭언·모욕·비하)</option>
-                    <option>업무 외 강요 (개인 심부름 등)</option>
-                    <option>따돌림·배제</option>
-                    <option>복합적 괴롭힘 (여러 유형 혼재)</option>
-                  </select>
-                </div>
-              </div>
-              <div class="form-divider"></div>
-              <div class="form-grid full">
-                <div class="fgroup">
-                  <label>피해 내용 (구체적 사실)</label>
-                  <textarea placeholder="예: 팀장 홍길동은 2024년 10월부터 현재까지 매일 개인 심부름을 강요하고, '머리가 나쁘다'는 등 모욕적인 언사를 반복하였으며, 다른 직원들 앞에서 공개적으로 창피를 주는 행위를 지속하였습니다." onfocus="this.style.boxShadow='0 0 0 2px #7B2FBE'" onblur="this.style.boxShadow=''" style="min-height:90px;border-color:#E2E8F0;"></textarea>
-                </div>
-              </div>
-              <div class="form-stamp">
-                <span class="stamp-label">제출처:</span>
-                <span class="stamp-box" style="border-color:#7B2FBE;color:#7B2FBE;">고용노동부 (인)</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- Resources -->
-  <div class="whitebox">
-    <div class="stitle"><div class="sbar" style="background:var(--blue)"></div><h2>🔗 탐색 필수 사이트</h2></div>
-    <div class="sitelinks" style="grid-template-columns:repeat(3,1fr);">
-      <a class="slink" href="https://www.nlrc.go.kr" target="_blank" rel="noopener"><span class="slico">⚖️</span><span class="sllbl">중앙노동위원회</span></a>
-      <a class="slink" href="https://labor.moel.go.kr/main/main.do" target="_blank" rel="noopener"><span class="slico">📋</span><span class="sllbl">고용노동부 노동포털</span></a>
-      <a class="slink" href="https://www.youthlabor.co.kr" target="_blank" rel="noopener"><span class="slico">🌟</span><span class="sllbl">청소년 근로권익센터</span></a>
-    </div>
-    <div class="tipbox"><p>✨ <strong>꿀팁:</strong> 사이트가 복잡하면 우측 상단 <strong>'검색'</strong> 기능 활용! 전화 상담은 국번 없이 <strong>1350</strong></p></div>
-  </div>
-
-  <!-- Pledge -->
-  <div class="pledgebox">
-    <div class="plgtitle"><div class="sbar" style="background:var(--gold)"></div><h3>✨ 오늘의 다짐</h3></div>
-    <textarea id="pledge" placeholder="오늘 수업을 통해 느낀 점과 노동권 수호를 위한 나만의 다짐을 적어주세요!" style="background:rgba(255,255,255,.95);border-color:transparent;min-height:80px;" onfocus="this.style.boxShadow='0 0 0 2px #FCD34D'" onblur="this.style.boxShadow=''"></textarea>
-    <div class="plgfoot"><button class="btn-submit" onclick="submitForm()">🚀 제출 완료</button></div>
-  </div>
-
-</main>
-
-<div id="toast">
-  <span class="ticon">🎉</span>
-  <div><div class="ttitle">제출 완료!</div><div class="tsub" id="tsub">노동권 수호자가 됐습니다!</div></div>
+<!-- SAVING OVERLAY -->
+<div class="saving-overlay" id="saving-overlay">
+  <div class="saving-spinner"></div>
+  <div class="saving-text">이미지 저장 중...</div>
 </div>
 
 <script>
-const COLORS={2:'#1B4FBF',3:'#0A7A5A',4:'#7B2FBE'};
-const LABELS={2:'부당 해고',3:'최저임금 위반',4:'직장 내 괴롭힘'};
-let selectedOpt=null;
-
-function updateStatus(){
-  const name=document.getElementById('f-name').value||'미입력';
-  const partner=document.getElementById('f-partner').value||'미입력';
-  document.getElementById('sname').textContent=name+' | 짝꿍: '+partner;
-  const activeCases=[1,selectedOpt].filter(Boolean);
-  const done=activeCases.filter(id=>{
-    const img=document.getElementById('prev-'+id);
-    const sel=document.getElementById('sel-'+id);
-    return(img&&img.style.display!=='none')||(sel&&sel.value.trim().length>0);
-  }).length;
-  document.getElementById('sdone').textContent=done;
-  document.getElementById('stotal').textContent=selectedOpt?2:1;
-}
-
-function toggleCard(id){
-  const body=document.getElementById('body-'+id);
-  const arr=document.getElementById('arr'+id);
-  const isOpen=body.style.display!=='none';
-  body.style.display=isOpen?'none':'flex';
-  arr.textContent=isOpen?'▼':'▲';
-}
-
-function selectOpt(id){
-  if(selectedOpt===id){
-    resetOptCard(id);
-    selectedOpt=null;
-    document.getElementById('sbadge').style.display='none';
-    [2,3,4].forEach(n=>document.getElementById('card-'+n).classList.add('faded'));
-    updateStatus();return;
+  function toggleCheck(el) {
+    el.classList.toggle('checked');
+    const cb = el.querySelector('input[type="checkbox"]');
+    if (cb) cb.checked = el.classList.contains('checked');
   }
-  if(selectedOpt!==null)resetOptCard(selectedOpt);
-  selectedOpt=id;
-  [2,3,4].forEach(n=>{
-    const card=document.getElementById('card-'+n);
-    if(n===id){
-      card.classList.remove('faded');card.classList.add('active');
-      card.style.borderColor=COLORS[n]+'55';
-      card.style.boxShadow='0 4px 24px '+COLORS[n]+'28';
-    }else{
-      card.classList.remove('active');card.classList.add('faded');
-      card.style.borderColor='';card.style.boxShadow='';
+
+  async function saveImage() {
+    const studentId = document.getElementById('student-id').value.trim() || '학번';
+    const studentName = document.getElementById('student-name').value.trim() || '이름';
+    const filename = `청소년구조대_${studentId}_${studentName}.png`;
+
+    // 모달 닫기
+    document.getElementById('petition-modal').classList.remove('active');
+
+    const overlay = document.getElementById('saving-overlay');
+    overlay.classList.add('active');
+
+    // 저장 바 숨기기
+    const saveBar = document.getElementById('save-bar');
+    saveBar.style.display = 'none';
+
+    try {
+      await new Promise(r => setTimeout(r, 100));
+      const canvas = await html2canvas(document.getElementById('capture-area'), {
+        scale: 2,
+        useCORS: true,
+        backgroundColor: '#0D1B3E',
+        scrollY: -window.scrollY,
+        windowWidth: document.documentElement.offsetWidth,
+      });
+
+      const link = document.createElement('a');
+      link.download = filename;
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    } catch (e) {
+      alert('이미지 저장에 실패했습니다. 다시 시도해 주세요.');
+      console.error(e);
+    } finally {
+      saveBar.style.display = '';
+      overlay.classList.remove('active');
     }
+  }
+
+  // 모달 배경 클릭 시 닫기
+  document.getElementById('petition-modal').addEventListener('click', function(e) {
+    if (e.target === this) this.classList.remove('active');
   });
-  document.getElementById('hdr-'+id).style.background=COLORS[id];
-  const pill=document.getElementById('pill-'+id);
-  pill.textContent='✓ 선택됨';pill.classList.add('sel');
-  document.getElementById('body-'+id).style.display='flex';
-  document.getElementById('arr'+id).textContent='▲';
-  const badge=document.getElementById('sbadge');
-  badge.style.display='inline';badge.textContent='선택: '+LABELS[id];
-  updateStatus();
-}
-
-function resetOptCard(id){
-  document.getElementById('hdr-'+id).style.background='#94A3B8';
-  const pill=document.getElementById('pill-'+id);
-  pill.textContent='선택하기';pill.classList.remove('sel');
-  document.getElementById('body-'+id).style.display='none';
-  document.getElementById('arr'+id).textContent='▼';
-  document.getElementById('card-'+id).style.borderColor='';
-  document.getElementById('card-'+id).style.boxShadow='';
-}
-
-function triggerFile(id){document.getElementById('file-'+id).click();}
-function handleFile(e,id){const f=e.target.files[0];if(f)showPreview(id,f);}
-function handleDrop(e,id){e.preventDefault();const f=e.dataTransfer.files[0];if(f)showPreview(id,f);}
-function showPreview(id,file){
-  const reader=new FileReader();
-  reader.onload=ev=>{
-    document.getElementById('prev-'+id).src=ev.target.result;
-    document.getElementById('prev-'+id).style.display='block';
-    document.getElementById('ph-'+id).style.display='none';
-    document.getElementById('zone-'+id).classList.add('has-img');
-    updateStatus();
-  };
-  reader.readAsDataURL(file);
-}
-
-function toggleEv(el,color){
-  const ck=el.querySelector('.evck');
-  const tx=el.querySelector('.evtxt');
-  const on=ck.classList.toggle('on');
-  ck.style.background=on?color:'#fff';
-  ck.style.borderColor=on?color:'#CBD5E1';
-  ck.style.color=on?'#fff':'transparent';
-  tx.classList.toggle('on',on);
-}
-
-function submitForm(){
-  const id=document.getElementById('f-id').value.trim();
-  const name=document.getElementById('f-name').value.trim();
-  const partner=document.getElementById('f-partner').value.trim();
-  const pledge=document.getElementById('pledge').value.trim();
-  if(!id||!name||!partner){alert('학번, 이름, 짝꿍 이름을 모두 입력해주세요!');return;}
-  if(!pledge){alert('오늘의 다짐을 입력해주세요!');return;}
-  if(!selectedOpt){alert('선택 미션도 1개 골라주세요! (CASE 2~4 중 짝꿍과 상의해서 선택하세요)');return;}
-  document.getElementById('tsub').textContent='수고했어요, '+name+'! 노동권 수호자가 됐습니다!';
-  const toast=document.getElementById('toast');
-  toast.classList.add('show');
-  setTimeout(()=>toast.classList.remove('show'),4000);
-}
-
-function saveAsImage(){
-  const name=document.getElementById('f-name').value.trim()||'학생';
-  const sid=document.getElementById('f-id').value.trim()||'';
-  if(typeof html2canvas==='undefined'){alert('잠시 후 다시 시도해주세요.');return;}
-  html2canvas(document.body,{scale:1.5,useCORS:true,allowTaint:true,backgroundColor:'#F0F4F8',logging:false})
-    .then(canvas=>{
-      const a=document.createElement('a');
-      a.download='노동권구조대_'+(sid?sid+'_':'')+name+'.png';
-      a.href=canvas.toDataURL('image/png');a.click();
-    })
-    .catch(()=>alert('이미지 저장 오류. 브라우저 스크린샷을 이용해주세요.'));
-}
 </script>
 </body>
 </html>
